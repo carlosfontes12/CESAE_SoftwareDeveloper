@@ -25,7 +25,8 @@ public class Ex13 {
         }
         if (horas > 12){
             if (minutos <= 59){
-                System.out.println((horas -12) + ":" + minutos + "PM");
+                horas = horas - 12;
+                System.out.println(horas + ":" + minutos + "PM");
             }else{
                 System.out.println("Minutos colocados errados");
         }
