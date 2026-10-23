@@ -17,7 +17,7 @@ public class Ex08 {
         // leitura de dados musica 1
 
         System.out.print("Introduza os segundos da musica 1: ");
-        segundos1 = input.nextInt();20
+        segundos1 = input.nextInt();
         System.out.print("Introduza os minutos da musica 1: ");
         minutos1 = input.nextInt();
 
