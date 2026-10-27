@@ -8,17 +8,27 @@ public class Ex14 {
 
         Scanner input = new Scanner(System.in);
 
-        int numerosIntroduzir;
-        int numero;
+    int numeroFinal;
+    int inicial = 0;
+    int numero;
+    int anterior;
 
+    System.out.print("Quantos números deseja inserir: ");
+    numeroFinal = input.nextInt();
 
-        System.out.print("Quantos números deseja inserir: ");
-        numerosIntroduzir = input.nextInt();
+    while (inicial < numeroFinal){
+        System.out.print("Introduza um numero: ");
+        numero = input.nextInt();
 
-        while (numerosIntroduzir>=0){
-            System.out.print("Introduza um numero: ");
-            numero = input.nextInt();
-
+        
+        
+        if(numero>anterior) {
+            anterior = numero;
         }
+        inicial = inicial + 1;
+        
+        }
+        System.out.println("crescente");
+    }
 }
-}
+
