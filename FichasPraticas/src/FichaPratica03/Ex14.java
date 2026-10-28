@@ -11,7 +11,9 @@ public class Ex14 {
     int numeroFinal;
     int inicial = 0;
     int numero;
-    int anterior;
+    int anterior = 0;
+    int crescente = 1;
+  
 
     System.out.print("Quantos números deseja inserir: ");
     numeroFinal = input.nextInt();
@@ -19,16 +21,23 @@ public class Ex14 {
     while (inicial < numeroFinal){
         System.out.print("Introduza um numero: ");
         numero = input.nextInt();
-
         
-        
-        if(numero>anterior) {
-            anterior = numero;
-        }
+       if (inicial > 0 && numero < anterior) {
+        crescente = 0;
+                }
+              
+        anterior = numero;
         inicial = inicial + 1;
+    }
+
+    if(crescente ==1) {
+           System.out.println("Crescente.");
+       }else {
+           System.out.println("Não crescente.");
+       }
+       
         
         }
-        System.out.println("crescente");
+        
     }
-}
 
