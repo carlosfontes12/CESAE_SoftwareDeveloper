@@ -13,7 +13,7 @@ public class Ex05 {
 
         System.out.print("Introduza um número: ");
         numero = input.nextInt();
-        input.nextLine(); // Consumir a quebra de linha pendente
+        input.nextLine();
 
         System.out.print("Introduza uma mensagem: ");
         frase = input.nextLine();
