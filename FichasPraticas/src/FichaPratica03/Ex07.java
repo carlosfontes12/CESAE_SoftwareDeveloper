@@ -9,10 +9,11 @@ public class Ex07 {
 
         while (num <= 100) {
             System.out.println(num);
-            num = num + 1;
             soma = soma+num;
+            num = num + 1;
+
         }
-        soma=soma-100;
+
         System.out.println("Soma: " + soma);
     }
 }

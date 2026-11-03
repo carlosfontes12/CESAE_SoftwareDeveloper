@@ -18,7 +18,9 @@ public class Ex08 {
         contador2 = numero + 5;
 
         while (contador1 <= contador2) {
+            if ( contador1 != numero){
             System.out.println(contador1);
+                       }
             contador1 = contador1 + 1;
         }
     }
