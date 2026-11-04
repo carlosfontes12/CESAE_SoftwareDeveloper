@@ -7,29 +7,30 @@ public class Ex04 {
 
         Scanner input = new Scanner(System.in);
 
-        int[] numeros = new int[10];
+       int[] numeros = new int[10];
         int i;
-
 
         //ciclo de leitura
 
         for (i = 0; i < numeros.length; i++) {
             System.out.print("Insira numeros: ");
             numeros[i] = input.nextInt();
+        }
 
-            // iniciar a variavel maior com um valor do array (numeros[0]
+        // iniciar a variavel maior com um valor do array (numeros[0]
 
-            int menor= numeros[0];
+        int menor = numeros[0];
 
-            //ciclo de escrita
+        //ciclo de escrita
 
-            for (i = 0; i < numeros.length; i++) {
+        for (i = 0; i < numeros.length; i++) {
+
             if (numeros[i] < menor) {
                 menor = numeros[i];
             }
 
+
         }
         System.out.println(menor);
-    }
 }
 }
