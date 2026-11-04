@@ -8,21 +8,28 @@ public class Ex06 {
 
         Scanner input = new Scanner(System.in);
 
-        int numero, numeroMaior = 0, numeroMenor = 0;
+        int numero, numeroMaior, numeroMenor;
 
-        do {
+        System.out.print("Introduza um numero (0 para sair): ");
+        numero = input.nextInt();
+
+        numeroMaior = numero;
+        numeroMenor = numero;
+
+
+        while (numero != 0) {
             System.out.print("Introduza um numero (0 para sair): ");
             numero = input.nextInt();
 
-           
-            if (numero > numeroMaior) {
+
+            if (numero > numeroMaior && numero !=0) {
                 numeroMaior = numero;
             }
-            if (numero < numeroMenor) {
+            if (numero < numeroMenor && numero !=0) {
                 numeroMenor = numero;
             }
 
-        } while (numero != 0);
+        }
 
         System.out.println("Maior numero: " + numeroMaior);
         System.out.println("Menor numero: " + numeroMenor);
