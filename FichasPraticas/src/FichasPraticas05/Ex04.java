@@ -7,7 +7,7 @@ public class Ex04 {
 
         Scanner input = new Scanner(System.in);
 
-       int[] numeros = new int[10];
+        int[] numeros = new int[10];
         int i;
 
         //ciclo de leitura
