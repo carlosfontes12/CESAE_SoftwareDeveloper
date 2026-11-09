@@ -9,7 +9,7 @@ public class Ex05 {
 
         //declarar variaveis
         int[] numeros = new int[12];
-        boolean existeNoArray = true;
+        boolean existeNoArray = false;
 
         //ciclo de leitura
         for (int i = 0; i < numeros.length; i++) {
