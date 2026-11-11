@@ -9,7 +9,7 @@ public class Ex07 {
 
         int[] numeros = new int[10];
         int i;
-        boolean encontrarPar = false;
+    
 
 
         //ciclo de leitura
@@ -19,22 +19,22 @@ public class Ex07 {
             numeros[i] = input.nextInt();
         }
 
-        int par = numeros[0];
+        int par = -1;
 
         //ciclo de escrita
-        for (i = 1; i < numeros.length; i++) {
+        for (i = 0; i < numeros.length; i++) {
 
-            if (numeros[i] % 2 == 0 && numeros[i] > par) {
-                par = numeros[i];
-                if (encontrarPar || numeros[i] > par) {
-                    encontrarPar = true;
+            if (numeros[i] % 2 == 0 ) {
+                
+                if (par == -1 || numeros[i] > par) {
+                    par = numeros[i];
                 }
 
             }
 
         }
 
-        if (encontrarPar == true) {
+        if (par != -1) {
             System.out.println("O maior número par é: " + par);
         } else {
             System.out.println("Não tem números pares");
