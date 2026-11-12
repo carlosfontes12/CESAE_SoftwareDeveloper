@@ -8,8 +8,8 @@ public class Ex08 {
 
         int[][] matriz3 = new int[3][3];
 
-        matriz3 = matriz1[][]+matriz2[][];
-        return matriz3;
+        matriz3 = matriz1+matriz2;
+        return matriz1+matriz2;
     }
 
     static int somatorioMatrizes(int[][] matriz1, int[][] matriz2) {
