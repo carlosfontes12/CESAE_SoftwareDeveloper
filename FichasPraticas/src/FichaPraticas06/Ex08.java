@@ -6,15 +6,20 @@ public class Ex08 {
 
     static int[][] somarMatrizes(int[][] matriz1, int[][] matriz2) {
 
-        int[][] matriz3 = new int[3][3];
+        int[][] matriz3 = new int[matriz1.length][matriz1[0].length];
 
-        matriz3 = matriz1+matriz2;
-        return matriz1+matriz2;
+        for (int linha = 0; linha < matriz1.length; linha++) {
+            for (int coluna = 0; coluna < matriz1[0].length; coluna++) {
+                matriz3[linha][coluna] = matriz1[linha][coluna] + matriz2[linha][coluna];
+            }
+        }
+        return matriz3;
     }
 
     static int somatorioMatrizes(int[][] matriz1, int[][] matriz2) {
 
         int soma = 0, soma2 = 0;
+        int soma3 = 0;
 
         for (int linha = 0; linha < matriz1.length; linha++) {
             for (int coluna = 0; coluna < matriz1[0].length; coluna++) {
@@ -33,12 +38,15 @@ public class Ex08 {
 
             System.out.println();
         }
-        return soma + soma2;
+        soma3 = soma + soma2;
+        return soma3;
 
     }
 
-    static int pedirMatriz(int[][] matriz) {
+    static int[][] pedirMatriz() {
         Scanner input = new Scanner(System.in);
+
+        int[][] matriz = new int[3][3];
 
         for (int linha = 0; linha < matriz.length; linha++) {
             for (int coluna = 0; coluna < matriz[0].length; coluna++) {
@@ -58,6 +66,7 @@ public class Ex08 {
         int[][] matriz2 = new int[3][3];
         int somatorio;
 
+
         System.out.print("Introduza a primeira matriz: ");
         matriz1 = pedirMatriz();
 
@@ -65,11 +74,11 @@ public class Ex08 {
         matriz2 = pedirMatriz();
 
 
-        somarMatrizes(matriz1, matriz2);
+        int[][] resultado = somarMatrizes(matriz1, matriz2);
         somatorio = somatorioMatrizes(matriz1, matriz2);
 
 
         System.out.println(somatorio);
-        System.out.println(somarMatrizes());
+        System.out.println(resultado);
     }
 }
