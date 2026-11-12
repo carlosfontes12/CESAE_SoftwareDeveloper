@@ -59,10 +59,22 @@ public class Ex07 {
         //ciclo de escrita
         for (int i = 0; i < nLinhas; i++) {
             for (int k = 0; k < nColunas; k++) {
-                System.out.print(caracterEscolhido);
+
+                if (i == 0 || i == nLinhas - 1) {
+                    System.out.print(caracterEscolhido);
+                }else{
+
+                    if(k==0 || k==nColunas-1){
+                        System.out.print(caracterEscolhido);
+                    }else{
+                        System.out.print(" ");
+                    }
+
+                }
+
 
             }
-                System.out.println(" ");
+            System.out.println(" ");
 
 
         }
