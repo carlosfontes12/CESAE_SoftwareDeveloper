@@ -23,16 +23,13 @@ public class Ex08 {
 
         for (int linha = 0; linha < matriz1.length; linha++) {
             for (int coluna = 0; coluna < matriz1[0].length; coluna++) {
-                System.out.print(matriz1[linha][coluna] + " ");
                 soma += matriz1[linha][coluna];
             }
 
-            System.out.println();
         }
 
         for (int linha = 0; linha < matriz2.length; linha++) {
             for (int coluna = 0; coluna < matriz2[0].length; coluna++) {
-                System.out.print(matriz2[linha][coluna] + " ");
                 soma2 += matriz2[linha][coluna];
             }
 
@@ -50,27 +47,39 @@ public class Ex08 {
 
         for (int linha = 0; linha < matriz.length; linha++) {
             for (int coluna = 0; coluna < matriz[0].length; coluna++) {
-                System.out.print(matriz[linha][coluna] + " ");
+                System.out.print("Insira numeros [" + linha + "] [" + coluna + "]: ");
+                matriz[linha][coluna] = input.nextInt();
             }
-
-            System.out.println();
         }
         return matriz;
     }
 
 
+    static void imprimirMatriz(int[][] matriz) {
+        for (int linha = 0; linha < matriz.length; linha++) {
+            for (int coluna = 0; coluna < matriz[0].length; coluna++) {
+                System.out.print(matriz[linha][coluna] + " ");
+            }
+            System.out.println(" ");
+        }
+
+    }
+
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
+
 
         int[][] matriz1 = new int[3][3];
         int[][] matriz2 = new int[3][3];
         int somatorio;
 
-
-        System.out.print("Introduza a primeira matriz: ");
+        System.out.println(" ");
+        System.out.println("Introduza a primeira matriz: ");
         matriz1 = pedirMatriz();
 
-        System.out.print("Introduza a segunda matriz: ");
+        System.out.println(" ");
+
+        System.out.println("Introduza a segunda matriz: ");
         matriz2 = pedirMatriz();
 
 
@@ -78,7 +87,9 @@ public class Ex08 {
         somatorio = somatorioMatrizes(matriz1, matriz2);
 
 
-        System.out.println(somatorio);
-        System.out.println(resultado);
+        System.out.println("Matriz1 + Matriz2: " );
+        imprimirMatriz(resultado);
+        System.out.println("Somatório das duas matrizes: " + somatorio);
+
     }
 }
