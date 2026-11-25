@@ -4,16 +4,11 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-/** biblioteca para imprimir ficheiros
 
- *
- */
+public class Ex04 {
 
-public class BibliotecadeFicheiros {
-
-    public static void imprimirFicheiro(String caminho) throws FileNotFoundException {
-
-        File ficheiro = new File(caminho);
+    public static void main(String[] args) throws FileNotFoundException {
+        File ficheiro = new File("FicheirosFicha07/exercicio_04.csv");
         Scanner sc = new Scanner(ficheiro);
 
         while (sc.hasNextLine()) {
@@ -21,6 +16,7 @@ public class BibliotecadeFicheiros {
             String linha = sc.nextLine();
             System.out.println(linha);
         }
-    }
 
+        sc.close();
+    }
 }

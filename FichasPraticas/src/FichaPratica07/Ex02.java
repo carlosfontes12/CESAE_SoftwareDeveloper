@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
-import static FichaPratica07.BibliotecadeFicheiros.*;
+import static FichaPratica07.BibliotecaFicheiros.*;
 
 public class Ex02 {
 
