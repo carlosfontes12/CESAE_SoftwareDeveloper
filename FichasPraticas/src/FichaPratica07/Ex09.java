@@ -121,17 +121,78 @@ public class Ex09 {
     }
 
 
-    public static int musicaMaiorDuracao(String[][] matriz, int duracao) {
+    /**
+     * converter uma duração em texto ("6:06") para segundos (366)
+     *
+     * @param duracao duração no formato minutos:segundos
+     * @return duração em segundos
+     */
+    public static int converterDuracaoParaSegundos(String duracao) {
 
-        int maior = matriz[0][3];
+        String[] partes = duracao.split(":");   // "6:06" -> ["6", "06"]
+
+        int minutos = Integer.parseInt(partes[0]);
+        int segundos = Integer.parseInt(partes[1]);
+
+        return minutos * 60 + segundos;
+    }
+
+
+    /**
+     * pesquisar a música com maior duração
+     *
+     * @param matriz
+     */
+    public static void pesquisarMusicaMaiorDuracao(String[][] matriz) {
+
+        // Começamos por assumir que a primeira música é a maior
+        int linhaMaior = 0;
+        int maiorDuracao = converterDuracaoParaSegundos(matriz[0][3]);
+
+        for (int linha = 1; linha < matriz.length; linha++) {
+
+            int duracaoAtual = converterDuracaoParaSegundos(matriz[linha][3]);
+
+            if (duracaoAtual > maiorDuracao) {
+                maiorDuracao = duracaoAtual;
+                linhaMaior = linha;
+            }
+        }
+
+        System.out.println(formatarMusica(matriz, linhaMaior));
+    }
+
+
+    /**
+     * pesquisar músicas com duração acima de um valor
+     *
+     * @param matriz
+     * @param duracaoMinima duração no formato minutos:segundos (ex: 5:00)
+     */
+    public static void pesquisarMusicasDuracaoSuperior(String[][] matriz, String duracaoMinima) {
+
+        int segundosMinimos = converterDuracaoParaSegundos(duracaoMinima);
+
+        System.out.println("Músicas com mais de " + duracaoMinima);
 
         for (int linha = 0; linha < matriz.length; linha++) {
 
-            if (matriz[linha][3] > maior) {
-                maior = matriz[linha][3];
+            if (converterDuracaoParaSegundos(matriz[linha][3]) > segundosMinimos) {
+                System.out.println(formatarMusica(matriz, linha));
             }
-            System.out.println(matriz[linha][1] + " | " + matriz[linha][3]);
         }
+    }
+
+
+    /**
+     * juntar os dados de uma música num só texto
+     *
+     * @param matriz
+     * @param linha linha da música na matriz
+     * @return texto no formato "Artista | Música | Duração"
+     */
+    public static String formatarMusica(String[][] matriz, int linha) {
+        return matriz[linha][1] + " | " + matriz[linha][0] + " | " + matriz[linha][3];
     }
 
 
@@ -178,15 +239,19 @@ public class Ex09 {
 
                 case 3: // Música mais longa
                     System.out.println("\n-+-+-+-+- MÚSICA MAIS LONGA -+-+-+-+-");
+                    pesquisarMusicaMaiorDuracao(matrizMusicas);
                     break;
 
                 case 4: // Músicas com duração superior
                     System.out.println("\n-+-+-+-+- MÚSICAS COM DURAÇÃO SUPERIOR A -+-+-+-+-");
+                    System.out.print("Duração mínima (minutos:segundos, ex: 5:00): ");
+                    String duracaoMinima = input.next();
+                    pesquisarMusicasDuracaoSuperior(matrizMusicas, duracaoMinima);
                     break;
 
                 case 5: // Número de músicas
                     System.out.println("\n-+-+-+-+- NÚMERO DE MÚSICAS -+-+-+-+-");
-                    System.out.println(matrizMusicas.length);
+                    System.out.println(matrizMusicas.length + " músicas");
                     break;
 
                 case 0:
