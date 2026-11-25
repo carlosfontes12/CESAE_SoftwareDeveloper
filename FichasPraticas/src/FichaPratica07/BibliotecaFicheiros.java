@@ -82,4 +82,36 @@ public class BibliotecaFicheiros {
         return total;
 
     }
+
+    public static int contarLinhasFicheiro(String caminho) throws FileNotFoundException {
+
+        File ficheiro = new File(caminho);
+        Scanner sc = new Scanner(ficheiro);
+
+        int numeroLinhas=0;
+
+        while (sc.hasNextLine()){
+            numeroLinhas++;
+            sc.nextLine();
+        }
+
+        return numeroLinhas;
+
+    }
+
+    public static int contarPalavrasFicheiro(String caminho) throws FileNotFoundException {
+
+        File ficheiro = new File(caminho);
+        Scanner sc = new Scanner(ficheiro);
+
+        int numeroPalavras=0;
+
+        while (sc.hasNext()){
+            numeroPalavras++;
+            sc.next();
+        }
+
+        return numeroPalavras;
+
+    }
 }
