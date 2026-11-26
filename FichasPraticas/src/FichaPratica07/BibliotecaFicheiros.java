@@ -5,7 +5,46 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
+import static FichaPratica07.Ex09.contarColunasFicheiro;
+
 public class BibliotecaFicheiros {
+
+    /** Ler um ficheiro para a matriz
+     *
+     * @param caminho
+     * @return matriz
+     * @throws FileNotFoundException quando nao encontra o ficheiro
+     */
+
+    public static String[][] lerFicheiroParaMatriz(String caminho) throws FileNotFoundException {
+
+        int numeroLinhasFicheiro = contarLinhasFicheiro(caminho);
+        int numeroColunasFicheiro = contarColunasFicheiro(caminho, ",");
+
+        String[][] matrizCinema = new String[numeroLinhasFicheiro - 1][numeroColunasFicheiro];
+
+
+        File ficheiro = new File(caminho);
+        Scanner sc = new Scanner(ficheiro);
+
+        // Avançar cabeçalho
+        sc.nextLine();
+
+        int linhaPreencher = 0;
+
+        while (sc.hasNextLine()) {
+            String linhaAtual = sc.nextLine();
+            String[] linhaSeparada = linhaAtual.split(",");
+
+            for (int i = 0; i < linhaSeparada.length; i++) {
+                matrizCinema[linhaPreencher][i] = linhaSeparada[i];
+            }
+
+            linhaPreencher++;
+        }
+
+        return matrizCinema;
+    }
 
 
     /**

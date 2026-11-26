@@ -38,7 +38,7 @@ public class Ex09 {
     public static String[][] lerFicheiroParaMatriz(String caminho) throws FileNotFoundException {
 
         int numeroLinhasFicheiro = contarLinhasFicheiro(caminho);
-        int numeroColunasFicheiro = contarColunasFicheiro(caminho, ",");
+        int numeroColunasFicheiro = contarColunasFicheiro(caminho, ";");
 
         String[][] matrizMusicas = new String[numeroLinhasFicheiro - 1][numeroColunasFicheiro];
 
@@ -53,7 +53,7 @@ public class Ex09 {
 
         while (sc.hasNextLine()) {
             String linhaAtual = sc.nextLine();
-            String[] linhaSeparada = linhaAtual.split(",");
+            String[] linhaSeparada = linhaAtual.split(";");
 
             for (int i = 0; i < linhaSeparada.length; i++) {
                 matrizMusicas[linhaPreencher][i] = linhaSeparada[i];
